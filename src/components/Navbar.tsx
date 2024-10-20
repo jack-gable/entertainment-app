@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Icon from "./Icon";
 import { usePathname } from "next/navigation";
+import VisuallyHidden from "./VisuallyHidden";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -12,6 +13,7 @@ const Navbar = () => {
       <div>
         <Link href="/">
           <Icon id="movie" size={26} className="text-accent" />
+          <VisuallyHidden>Home</VisuallyHidden>
         </Link>
       </div>
       <ul className="flex sm:flex-col gap-8 items-center">
@@ -20,8 +22,11 @@ const Navbar = () => {
             <Icon
               id="squares"
               size={22}
-              className={pathname === "/" ? "text-white" : "text-secondary"}
+              className={`${
+                pathname === "/" ? "text-white" : "text-secondary"
+              } hover:scale-[1.75]`}
             />
+            <VisuallyHidden>Home</VisuallyHidden>
           </Link>
         </li>
         <li>
@@ -29,10 +34,11 @@ const Navbar = () => {
             <Icon
               id="film"
               size={20}
-              className={
+              className={`${
                 pathname === "/movie" ? "text-white" : "text-secondary"
-              }
+              } hover:scale-[1.75]`}
             />
+            <VisuallyHidden>Movies</VisuallyHidden>
           </Link>
         </li>
         <li>
@@ -40,8 +46,11 @@ const Navbar = () => {
             <Icon
               id="tv"
               size={20}
-              className={pathname === "/tv" ? "text-white" : "text-secondary"}
+              className={`${
+                pathname === "/tv" ? "text-white" : "text-secondary"
+              } hover:scale-[1.75]`}
             />
+            <VisuallyHidden>TV</VisuallyHidden>
           </Link>
         </li>
         <li>
@@ -49,10 +58,11 @@ const Navbar = () => {
             <Icon
               id="bookmark"
               size={18}
-              className={
+              className={`${
                 pathname === "/bookmark" ? "text-white" : "text-secondary"
-              }
+              } hover:scale-[1.75]`}
             />
+            <VisuallyHidden>Bookmarks</VisuallyHidden>
           </Link>
         </li>
       </ul>

@@ -54,3 +54,46 @@ body,
 #__next {
   height: 100%;
 }
+
+/* swiper styles */
+:root {
+  --swiper-navigation-size: 35px !important;
+  --swiper-scrollbar-size: 5px !important;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --swiper-navigation-size: 15px !important;
+  }
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #fc4844 !important;
+}
+.swiper-pagination-progressbar {
+  background-color: #212121 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: white;
+}
+
+.swiper-button-next:hover:after,
+.swiper-button-prev:hover:after {
+  transform: scale(1.5);
+  font-weight: bold;
+}
+
+/* loading spinner styles */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
