@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import BookmarkButton from "../BookmarkBtn";
 import { bookmarkCard } from "@/utils/types";
+import { MotionDiv } from "../MotionDiv";
 
 interface CardTrendingProps {
   backdropSrc?: string;
@@ -18,6 +19,7 @@ interface CardTrendingProps {
   pageHref: string;
   mediaType?: string;
   item?: bookmarkCard;
+  index?: number;
 }
 
 const CardTrending = ({
@@ -30,13 +32,29 @@ const CardTrending = ({
   media,
   mediaType,
   item,
+  index = 0,
 }: CardTrendingProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 640 });
   const releaseDate = new Date(date!);
   const releaseYear = releaseDate.getFullYear();
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: index * 0.45,
+        ease: "easeInOut",
+        duration: 0.5,
+      }}
+      viewport={{ amount: 0 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative w-full h-full overflow-hidden py-2"
@@ -92,7 +110,7 @@ const CardTrending = ({
           </div>
         </Link>
       )}
-    </div>
+    </MotionDiv>
   );
 };
 

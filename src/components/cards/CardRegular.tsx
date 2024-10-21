@@ -5,6 +5,7 @@ import Link from "next/link";
 import VisuallyHidden from "../VisuallyHidden";
 import { bookmarkCard } from "@/utils/types";
 import BookmarkButton from "../BookmarkBtn";
+import { MotionDiv } from "../MotionDiv";
 
 interface CardRegularProps {
   backdropSrc?: string;
@@ -17,6 +18,7 @@ interface CardRegularProps {
   pageHref: string;
   mediaType?: string;
   item?: bookmarkCard;
+  index?: number;
 }
 
 const CardRegular = ({
@@ -30,12 +32,29 @@ const CardRegular = ({
   pageHref,
   mediaType,
   item,
+  index = 0,
 }: CardRegularProps) => {
   const releaseDate = new Date(date!);
   const releaseYear = releaseDate.getFullYear();
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div className="rounded-xl bg-primary p-1 hover:bg-white/80 hover:text-black relative">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: index * 0.25,
+        ease: "easeInOut",
+        duration: 0.5,
+      }}
+      viewport={{ amount: 0 }}
+      className="rounded-xl bg-primary p-1 hover:bg-white/80 hover:text-black relative"
+    >
       <div className="relative w-full overflow-hidden">
         <CardRegularImage
           backdrop_path={backdropSrc}
@@ -64,7 +83,7 @@ const CardRegular = ({
           <h3 className="text-semibold flex-1 line-clamp-1">{title}</h3>
         </div>
       </Link>
-    </div>
+    </MotionDiv>
   );
 };
 

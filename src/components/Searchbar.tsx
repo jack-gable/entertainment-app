@@ -62,7 +62,7 @@ const Searchbar = ({
         </label>
         <button type="submit" className="text-white hover:text-accent p-1">
           <Icon id="search" size={18} />
-          <VisuallyHidden>{placeholder}</VisuallyHidden>
+          <VisuallyHidden>Search button</VisuallyHidden>
         </button>
       </form>
     </div>

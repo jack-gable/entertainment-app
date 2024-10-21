@@ -77,6 +77,7 @@ const CollectionTrending = ({
                         pageHref={`/movie/${item.id}`}
                         item={item}
                         mediaType={propType}
+                        index={index}
                       />
                       <div className="text-[10rem] font-bold opacity-40 absolute bottom-[-9%] right-[3%] z-0">
                         {index + 1}
@@ -95,6 +96,7 @@ const CollectionTrending = ({
                         pageHref={`/tv/${item.id}`}
                         item={item}
                         mediaType={propType}
+                        index={index}
                       />
                       <div className="text-[10rem] font-bold opacity-40 absolute bottom-[-9%] right-[3%] z-0">
                         {index + 1}

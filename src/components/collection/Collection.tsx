@@ -47,7 +47,7 @@ const Collection = ({
             {propType === "movie"
               ? data?.results
                   ?.slice(0, 8)
-                  .map((item: MovieProp) => (
+                  .map((item: MovieProp, index: number) => (
                     <CardRegular
                       key={item.id}
                       title={item.title}
@@ -60,11 +60,12 @@ const Collection = ({
                       item={item}
                       media={<Icon id="film" size={18} />}
                       pageHref={`/movie/${item.id}`}
+                      index={index}
                     />
                   ))
               : data?.results
                   ?.slice(0, 10)
-                  .map((item: TvProp) => (
+                  .map((item: TvProp, index: number) => (
                     <CardRegular
                       key={item.id}
                       title={item?.name}
@@ -77,6 +78,7 @@ const Collection = ({
                       item={item}
                       media={<Icon id="tv" size={18} />}
                       pageHref={`/tv/${item.id}`}
+                      index={index}
                     />
                   ))}
           </div>
