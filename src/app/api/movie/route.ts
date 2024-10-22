@@ -1,6 +1,6 @@
 import { getGenreMovie } from "@/lib/TMDBEndpoints";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const response = await fetch(getGenreMovie());
 

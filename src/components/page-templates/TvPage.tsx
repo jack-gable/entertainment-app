@@ -35,7 +35,7 @@ const TvPage = ({ id }: { id: string }) => {
   const renderTrailer = () => {
     // check for officialTrailer if not available then selects the first valid key
     const officialTrailer = data?.videos?.results.find(
-      (item: any) => item.name === "Official Trailer"
+      (item: { name: string; key: string }) => item.name === "Official Trailer"
     );
     const defaultKey = officialTrailer
       ? officialTrailer.key
@@ -106,14 +106,16 @@ const TvPage = ({ id }: { id: string }) => {
                   <div>
                     <h4 className="text-lg font-bold pb-1">Cast</h4>
                     <div className="flex gap-1 flex-wrap">
-                      {data?.cast?.slice(0, 10).map((cast: any) => (
-                        <p
-                          className="border border-slate-700 px-2 py-1 rounded-2xl mr-2 text-xs font-semibold"
-                          key={cast.id}
-                        >
-                          {cast.name}
-                        </p>
-                      ))}
+                      {data?.cast
+                        ?.slice(0, 10)
+                        .map((cast: { id: string; name: string }) => (
+                          <p
+                            className="border border-slate-700 px-2 py-1 rounded-2xl mr-2 text-xs font-semibold"
+                            key={cast.id}
+                          >
+                            {cast.name}
+                          </p>
+                        ))}
                     </div>
                   </div>
                   <div className="flex gap-12">
@@ -213,14 +215,16 @@ const TvPage = ({ id }: { id: string }) => {
               <div>
                 <h4 className="text-lg font-bold pb-1">Cast</h4>
                 <div className="flex gap-1 flex-wrap">
-                  {data?.cast?.slice(0, 10).map((cast: any) => (
-                    <p
-                      className="border border-slate-700 px-2 py-1 rounded-2xl mr-2 text-xs font-semibold"
-                      key={cast.id}
-                    >
-                      {cast.name}
-                    </p>
-                  ))}
+                  {data?.cast
+                    ?.slice(0, 10)
+                    .map((cast: { name: string; id: number }) => (
+                      <p
+                        className="border border-slate-700 px-2 py-1 rounded-2xl mr-2 text-xs font-semibold"
+                        key={cast.id}
+                      >
+                        {cast.name}
+                      </p>
+                    ))}
                 </div>
               </div>
               <div className="flex gap-12">
