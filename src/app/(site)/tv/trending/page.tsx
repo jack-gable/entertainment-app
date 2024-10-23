@@ -43,6 +43,8 @@ const TvTrendingpage = () => {
                   date={item.first_air_date}
                   media={<Icon id="tv" size={18} />}
                   pageHref={`/tv/${item.id}`}
+                  item={item}
+                  mediaType={item.media_type}
                 />
               ))}
             </div>

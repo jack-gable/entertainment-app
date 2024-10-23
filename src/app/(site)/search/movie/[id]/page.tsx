@@ -49,6 +49,8 @@ const SearchMoviespage = ({ params }: { params: { id: string } }) => {
                   date={item.release_date}
                   media={<Icon id="film" size={18} />}
                   pageHref={`/movie/${item.id}`}
+                  item={item}
+                  mediaType={item.media_type}
                 />
               ))}
             </div>
