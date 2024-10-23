@@ -19,7 +19,7 @@ const ComboBox = ({
 
   useEffect(() => {
     setGenre(selectedGenre);
-  }, [selectedGenre]);
+  }, [selectedGenre, setGenre]);
 
   return (
     <Menu>
