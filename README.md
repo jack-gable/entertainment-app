@@ -8,11 +8,7 @@ Powered by [TMDB](https://www.themoviedb.org/?language=en-US). Built with [Next.
 
 Tech:
 
- <img src="https://skillicons.dev/icons?i=nextjs" alt="skills-icons"/> 
- <img src="https://skillicons.dev/icons?i=react" alt="skills-icons"/>
- <img src="https://skillicons.dev/icons?i=ts" alt="skills-icons"/>
- <img src="https://skillicons.dev/icons?i=tailwind" alt="skills-icons"/>
- <img src="https://skillicons.dev/icons?i=vercel" alt="skills-icons"/>
+ <img src="https://skillicons.dev/icons?i=nextjs" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=react" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=ts" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=tailwind" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=vercel" alt="skills-icons"/>
 
 ## To get started
 
